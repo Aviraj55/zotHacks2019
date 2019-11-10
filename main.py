@@ -3,12 +3,14 @@ import spotipy.util as util
 from json.decoder import JSONDecodeError
 import spotify_data
 import logic
+import app
 
 
 # MY USER ID: spotify:user:yridp68vzs69q3cn7rdijnyo4
 
 
 def main():
+    id = app.getId()
     sp_recent = spotify_data.get_spotify_recent_played_token()
     #user_recent_tracks = spotify_data.get_recent_tracks(sp_recent)
     #print(user_recent_tracks)
