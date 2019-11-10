@@ -22,10 +22,7 @@ def get_recent_tracks(sp):
     return recent_tracks
 
 
-
-
-def get_spotify_create_playlist_token(username):
-    username = 'yridp68vzs69q3cn7rdijnyo4'
+def get_spotify_create_playlist_token(username = 'yridp68vzs69q3cn7rdijnyo4'):
     scope = 'playlist-modify-public'
     token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
 
@@ -35,14 +32,14 @@ def get_spotify_create_playlist_token(username):
     return None
 
 def create_playlist(sp, username = 'yridp68vzs69q3cn7rdijnyo4'):
-    new_playlist = sp.user_playlist_create(username, "Your Top Hits!", public = True, "" )
+    new_playlist = sp.user_playlist_create(username, "Your Top Hits!", public = True, description = "A playlist made for you courtesy of zotHacks :)")
     return new_playlist
 
 
-def search_playlists()
+def get_playlist_id(playlist):
+    return playlist['id']
 
-
-
-
-
+def add_tracks(sp, playlist_id, tracks, username = 'yridp68vzs69q3cn7rdijnyo4'):
+    sp.user_playlist_add_tracks(username, playlist_id, tracks)
+    
 
