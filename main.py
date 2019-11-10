@@ -10,16 +10,8 @@ import app
 
 
 def main():
-<<<<<<< HEAD
-    id = app.getId()
-    sp_recent = spotify_data.get_spotify_recent_played_token()
-    #user_recent_tracks = spotify_data.get_recent_tracks(sp_recent)
-    #print(user_recent_tracks)
-    sp_playlist = spotify_data.get_spotify_create_playlist_token()
-=======
-    sp_recent = spotify_data.get_spotify_recent_played_token()          #token with permissions to access user's recent songs
-    sp_playlist = spotify_data.get_spotify_create_playlist_token()      #token to get access to create a playlist for the user
->>>>>>> 48b1d915b9c9f082f95e69eb3d31aa4e5a5a4d91
+    sp_recent = spotify_data.get_spotify_recent_played_token(app.id)          #token with permissions to access user's recent songs
+    sp_playlist = spotify_data.get_spotify_create_playlist_token(app.id)      #token to get access to create a playlist for the user
 
 
     user_recent_tracks = spotify_data.get_recent_tracks(sp_recent)      #JSON of recent tracks 

@@ -8,7 +8,7 @@ SPOTIPY_REDIRECT_URI = 'http://localhost:3000'
 
 
 
-def get_spotify_recent_played_token(username = 'yridp68vzs69q3cn7rdijnyo4'):
+def get_spotify_recent_played_token(username):
     scope = 'user-read-recently-played'
     token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
 
@@ -22,7 +22,7 @@ def get_recent_tracks(sp):
     return recent_tracks
 
 
-def get_spotify_create_playlist_token(username = 'yridp68vzs69q3cn7rdijnyo4'):
+def get_spotify_create_playlist_token(username):
     scope = 'playlist-modify-public'
     token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
 
