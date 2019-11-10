@@ -1,9 +1,9 @@
 
 def get_songs(data: dict) -> dict:
-    """ Returns a dictionary of song titles: playbacks from data given."""
+    """ Returns a dictionary of song id: playbacks from data given."""
     songs = dict()
     for item in data["items"]:
-        name = item["track"]["name"]
+        name = item["track"]["id"]
         if name in songs:
           songs.update({name: songs[name]+1})
         else:
@@ -22,7 +22,7 @@ def average_playcount(songs : dict) -> float:
     return average
 
 def above_average_songs(average: float, songs: dict)-> [str]:
-    """ Returns a list of song titles with playbacks greater than average playbacks."""
+    """ Returns a list of song ids with playbacks greater than average playbacks."""
     songs = sorted(songs.items(), key = 
              lambda kv:(kv[1], kv[0]), reverse = True)
     top_songs = []
@@ -35,15 +35,4 @@ def above_average_songs(average: float, songs: dict)-> [str]:
         if plays > average:
             top_songs.append(name)
     return top_songs
-
-    
-
-
-
-            
-            
-        
-
-
-
 
