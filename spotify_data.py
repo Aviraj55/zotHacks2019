@@ -2,23 +2,24 @@ import spotipy
 import spotipy.util as util
 from json.decoder import JSONDecodeError
 
-export SPOTIPY_CLIENT_ID = '6172eeb69049476891564b4272c977ed'
-export SPOTIPY_CLIENT_SECRET = 'cc58a40c94fd40c6b16cd225f1d20084'
-export SPOTIPY_REDIRECT_URI = 'http://www.google.com'
+SPOTIPY_CLIENT_ID = '6172eeb69049476891564b4272c977ed'
+SPOTIPY_CLIENT_SECRET = 'cc58a40c94fd40c6b16cd225f1d20084'
+SPOTIPY_REDIRECT_URI = 'http://localhost:3000'
 
-def get_spotify_token(user_name):
-    token = util.prompt_for_user_token(user_name, user-read-recently-played)
+scope = 'user-read-recently-played'
 
-    if token: 
-        return token
-    else: 
-        print("The user {}'s token cannot be accessed".format(user_name))
 
-def get_recent_tracks(token):
+def get_spotify_token(user_name = 'yridp68vzs69q3cn7rdijnyo4'):
+    token = util.prompt_for_user_token(user_name, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
 
-    sp = spotipy.Spotify(auth = token)
+    if token:
+        sp = spotipy.Spotify(auth = token)
+        return sp
+    return None 
 
-    recent_tracks = spotipy.current_user_recently_played(limit = 50)
+def get_recent_tracks(sp):
+
+    recent_tracks = sp.current_user_recently_played(limit = 50)
 
     return recent_tracks
 
