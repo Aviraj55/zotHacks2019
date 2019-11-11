@@ -10,7 +10,7 @@ id = ""
 def getId():
     id = request.args.get("id")
     main.main()
-    return id
+    return "Hello World"
 
 if __name__ == "__main__":
     app.run()
