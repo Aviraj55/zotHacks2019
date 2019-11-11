@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import './UserInput.scss';
 import axios from 'axios';
-
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { strict } from "assert";
@@ -34,11 +33,18 @@ function UserInput(props){
     }
 
     return (
-        <div>
-            <p></p>
-            <Form.Label>Spotify Id</Form.Label>
-            <Form.Control Id = "Id" onChange={handleInput}></Form.Control>
-            <Button onClick={handleSubmit}>Submit</Button>
+        <div className='Admin'>
+            <p className='Topleft'>Zotify</p>
+            <div>
+                <Form.Label>Make Your Spotify Top Hits</Form.Label>
+                <div>
+                    <Form.Control placeholder='Enter Spotify User Id' Id = "Id" onChange={handleInput}></Form.Control>
+                    <div>
+                        <Form.Text></Form.Text>
+                        <Button onClick={handleSubmit}>Create Your Playlist</Button>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

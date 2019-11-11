@@ -41,5 +41,7 @@ def get_playlist_id(playlist):
 
 def add_tracks(sp, playlist_id, tracks, username = 'yridp68vzs69q3cn7rdijnyo4'):
     sp.user_playlist_add_tracks(username, playlist_id, tracks)
-    
+
+def get_user_id(sp, id):
+    sp.current_user()
 
