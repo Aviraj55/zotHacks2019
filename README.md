@@ -1,4 +1,4 @@
-# playlist_maker
+# Zotify
 
 playlist_maker creates a playlist of your favorite songs on Spotify!!!
 
