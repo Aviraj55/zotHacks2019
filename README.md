@@ -25,4 +25,6 @@ Afterwards, input the link to the page you got redirected to in the terminal you
 
 ## TODO
 
-In the future, we hope to implement Genius' api so you can see the lyrics of your favorite songs.
+In the future, we hope to implement Genius' api so you can see the lyrics of your favorite songs. </br>
+We hope to make the process not require the user to copy paste the links. </br>
+We also hope to update the front end so the user has more feedback. 
