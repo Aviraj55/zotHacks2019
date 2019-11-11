@@ -31,7 +31,7 @@ def get_spotify_create_playlist_token(username):
         return sp
     return None
 
-def create_playlist(sp, username = 'yridp68vzs69q3cn7rdijnyo4'):
+def create_playlist(sp, username):
     new_playlist = sp.user_playlist_create(username, "Your Top Hits!", public = True, description = "A playlist made for you courtesy of zotHacks :)")
     return new_playlist
 
@@ -39,9 +39,7 @@ def create_playlist(sp, username = 'yridp68vzs69q3cn7rdijnyo4'):
 def get_playlist_id(playlist):
     return playlist['id']
 
-def add_tracks(sp, playlist_id, tracks, username = 'yridp68vzs69q3cn7rdijnyo4'):
+def add_tracks(sp, playlist_id, tracks, username):
     sp.user_playlist_add_tracks(username, playlist_id, tracks)
 
-def get_user_id(sp, id):
-    sp.current_user()
 

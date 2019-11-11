@@ -29,7 +29,7 @@ function UserInput(props){
         // }).catch(err => {
         //     console.log("Does not work");
         // })
-        fetch('http://localhost:5000/?Id=' + theUser['Id'])
+        fetch('http://localhost:5000/?id=' + theUser['Id'])
     }
 
     return (
