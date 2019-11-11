@@ -21,3 +21,8 @@ My user ID would be "yridp68vzs69q3cn7rdijnyo4"
 
 
 Afterwards, input the link to the page you got redirected to in the terminal you ran app.py twice. (This is because it makes two token requests for permissions).
+
+
+## TODO
+
+In the future, we hope to implement Genius' api so you can see the lyrics of your favorite songs.
